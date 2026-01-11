@@ -1,0 +1,15 @@
+{
+  "name": "AI调教任务转盘",
+  "short_name": "任务转盘",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#e91e63",
+  "icons": [
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
