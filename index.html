@@ -1,1 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>AI 调教任务转盘</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    *{box-sizing:border-box;margin:0;font-family:Arial,Helvetica,sans-serif}
+    body{background:#000;color:#eee;display:flex;flex-direction:column;align-items:center;padding:10px}
+    h2{margin:.5em 0}
+    canvas{display:block;margin:10px auto}
+    button{font-size:18px;margin:6px;padding:10px 24px;border:none;border-radius:6px;background:#e91e63;color:#fff}
+    button:disabled{background:#555}
+    #aiTalk{background:#111;border:1px solid #444;margin:10px 0;padding:10px;width:100%;max-width:400px;border-radius:8px;text-align:left;min-height:60px}
+    #taskDetail{background:#1a1a1a;border:1px solid #555;margin:10px 0;padding:12px;width:100%;max-width:400px;border-radius:8px}
+    #taskDetail ul{text-align:left;margin-left:1.2em}
+    #achieve{width:100%;max-width:400px}
+    #badgeBox{display:flex;flex-wrap:wrap;justify-content:center}
+    #badgeBox img{width:70px;height:70px;margin:4px;border-radius:50%;border:2px solid #444}
+    .hide{display:none}
+  </style>
+</head>
+<body>
+<h2>AI 调教 · 任务转盘</h2>
+<canvas id="wheel" width="340" height="340"></canvas>
+<button id="spinBtn">强制抽签</button>
 
+<div id="aiTalk">AI：等待指令…</div>
+
+<div id="taskDetail" class="hide">
+  <h3 id="tTitle">任务明细</h3>
+  <ul id="tInfo"></ul>
+  < img id="tieGif" class="hide" width="220">
+  <h4>拍照上传 ≥ <span id="picNeed"></span> 张</h4>
+  <input type="file" id="pic" accept="image/*" multiple>
+  <br><br>
+  <button id="uploadBtn" disabled>提交完成</button>
+</div>
+
+<div id="achieve">
+  <h3>成就墙</h3>
+  <div id="badgeBox"></div>
+</div>
+
+<!-- 脚本顺序：先第三方，再我们的 -->
+<script src="https://cdn.jsdelivr.net/npm/winwheel@1.0.1/Winwheel.min.js"></script>
+<script src="gemini.js"></script>
+<script src="dglab.js"></script>
+<script src="achievements.js"></script>
+<script src="sw.js"></script><!-- 注册 ServiceWorker -->
+<script src="app.js"></script>
+</body>
+</html>
