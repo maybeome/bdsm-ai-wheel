@@ -33,7 +33,6 @@
 <div id="taskDetail" class="hide">
   <h3 id="tTitle">任务明细</h3>
   <ul id="tInfo"></ul>
-  < img id="tieGif" class="hide" width="220">
   <h4>拍照上传 ≥ <span id="picNeed"></span> 张</h4>
   <input type="file" id="pic" accept="image/*" multiple>
   <br><br>
@@ -45,12 +44,10 @@
   <div id="badgeBox"></div>
 </div>
 
-<!-- 脚本顺序：先第三方，再我们的 -->
-<script src="https://lib.baomitu.com/winwheel/1.0.1/Winwheel.min.js"></script>
+<script src="Winwheel.min.js"></script>
 <script src="gemini.js"></script>
 <script src="dglab.js"></script>
 <script src="achievements.js"></script>
-<script src="sw.js"></script><!-- 注册 ServiceWorker -->
 <script src="app.js"></script>
 </body>
 </html>
